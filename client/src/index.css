@@ -118,13 +118,14 @@
   }
 
   .download-btn {
-    background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(320, 94%, 67%));
+    background: hsl(180, 100%, 50%);
     transition: all 0.3s ease;
   }
 
   .download-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(0, 254, 255, 0.3);
+    background: hsl(180, 100%, 45%);
   }
 
   .feature-card {

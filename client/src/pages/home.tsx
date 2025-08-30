@@ -4,7 +4,7 @@ import { FeaturesSection } from '@/components/features-section';
 import { ScreenshotsSection } from '@/components/screenshots-section';
 import { DownloadSection } from '@/components/download-section';
 import { Footer } from '@/components/footer';
-import { CameraLogo } from '@/components/camera-logo';
+import { Logo } from '@/components/camera-logo';
 import { useLanguage } from '@/hooks/use-language';
 import { Globe } from 'lucide-react';
 
@@ -40,7 +40,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <CameraLogo size="md" />
+              <Logo size="md" />
               <span className="text-xl font-bold text-foreground">Show Timekeeper</span>
             </div>
 

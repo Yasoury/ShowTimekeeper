@@ -1,4 +1,4 @@
-import { CameraLogo } from './camera-logo';
+import { Logo } from './camera-logo';
 import { useLanguage } from '@/hooks/use-language';
 import { Download, Star } from 'lucide-react';
 

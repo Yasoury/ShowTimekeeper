@@ -1,5 +1,5 @@
 import { useLanguage } from '@/hooks/use-language';
-import { CameraLogo } from './camera-logo';
+import { Logo } from './camera-logo';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <CameraLogo size="md" />
+              <Logo size="md" />
               <span className="text-xl font-bold">Show Timekeeper</span>
             </div>
             <p className="text-muted-foreground mb-4">

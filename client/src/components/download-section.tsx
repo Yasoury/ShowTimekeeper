@@ -1,5 +1,5 @@
 import { useLanguage } from '@/hooks/use-language';
-import { CameraLogo } from './camera-logo';
+import { Logo } from './camera-logo';
 import { Shield, Smartphone, Globe } from 'lucide-react';
 
 export function DownloadSection() {
@@ -8,7 +8,7 @@ export function DownloadSection() {
   return (
     <section id="download" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <CameraLogo size="lg" className="mx-auto mb-6 animate-pulse-slow" />
+        <Logo size="lg" className="mx-auto mb-6 animate-pulse-slow" />
         
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           {t('readyTitle').split(' ').slice(0, -1).join(' ')}{' '}
