@@ -1,0 +1,218 @@
+import 'package:flutter/material.dart';
+import 'package:component_library/component_library.dart';
+import 'package:component_library/src/theme/spacing.dart';
+
+const _dividerThemeData = DividerThemeData(
+  space: 0,
+);
+
+Gradient backgroundDarkGradientColor = const LinearGradient(
+  colors: [Color(0xFF0A0321), Color(0xFF252A3A), Color(0xFF1D2331)],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  stops: [0.0, 0.6, 1.0],
+);
+const blueForGradientColor = Color(0xFF00FEFF);
+const pinkForGradientColor = Color(0xFFFE52BC);
+
+Gradient borderDarkGradientColor = const LinearGradient(
+  colors: [blueForGradientColor, pinkForGradientColor],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
+
+const fontFamily = 'Cairo';
+
+// Global TextTheme with Cairo font
+const globalTextTheme = TextTheme(
+  displayLarge: TextStyle(fontFamily: fontFamily),
+  displayMedium: TextStyle(fontFamily: fontFamily),
+  displaySmall: TextStyle(fontFamily: fontFamily),
+  headlineLarge: TextStyle(fontFamily: fontFamily),
+  headlineMedium: TextStyle(fontFamily: fontFamily),
+  headlineSmall: TextStyle(fontFamily: fontFamily),
+  titleLarge: TextStyle(fontFamily: fontFamily),
+  titleMedium: TextStyle(fontFamily: fontFamily),
+  titleSmall: TextStyle(fontFamily: fontFamily),
+  bodyLarge: TextStyle(fontFamily: fontFamily),
+  bodyMedium: TextStyle(fontFamily: fontFamily),
+  bodySmall: TextStyle(fontFamily: fontFamily),
+  labelLarge: TextStyle(fontFamily: fontFamily),
+  labelMedium: TextStyle(fontFamily: fontFamily),
+  labelSmall: TextStyle(fontFamily: fontFamily),
+);
+
+abstract class WonderThemeData {
+  ThemeData get materialThemeData;
+
+  double screenMargin = Spacing.mediumLarge;
+
+  double gridSpacing = Spacing.mediumLarge;
+
+  bool get isDark;
+
+  Color get primaryColor;
+
+  Color get secondaryColor;
+
+  Color get accentColor;
+
+  Color get activeTextColor;
+
+  Color get blueForGradientColor;
+
+  Color get pinkForGradientColor;
+
+  Gradient get backgroundGradientColor;
+
+  Gradient get borderGradientColor;
+
+  MaterialColor get accentColorAsMaterialColor;
+
+  TextStyle quoteTextStyle = const TextStyle(
+    fontFamily: 'Fondamento',
+    package: 'component_library',
+  );
+}
+
+const primaryLightColor = Color(0xFFEEEEEE);
+const secondaryLightColor = Color(0xFFFFFFFF);
+const accentLightColor = Color(0xFF6C63FF);
+
+Gradient backgroundLightGradientColor = const LinearGradient(
+  colors: [Color(0xFFF5F5F5), Color(0xFFFFFFFF)],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  stops: [0.2, 1.0],
+);
+Gradient borderLightGradientColor = const LinearGradient(
+  colors: [
+    Color(0xFF6C63FF),
+    Color(0xFFB388FF),
+  ],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
+
+class LightWonderThemeData extends WonderThemeData {
+  @override
+  ThemeData get materialThemeData => ThemeData(
+        brightness: Brightness.light,
+        primaryColor: primaryLightColor,
+        scaffoldBackgroundColor: primaryLightColor,
+        cardColor: secondaryLightColor,
+        colorScheme: const ColorScheme.light(),
+        dividerTheme: _dividerThemeData,
+        useMaterial3: true,
+        tabBarTheme: const TabBarThemeData(
+          labelStyle: TextStyle(fontFamily: 'Cairo'),
+          unselectedLabelStyle: TextStyle(fontFamily: 'Cairo'),
+        ),
+        textTheme: globalTextTheme, // Apply global text theme
+      );
+
+  @override
+  Color get primaryColor => primaryLightColor;
+
+  @override
+  Color get secondaryColor => secondaryLightColor;
+
+  @override
+  Color get accentColor => accentLightColor;
+
+  @override
+  Color get activeTextColor => Colors.black;
+
+  @override
+  Gradient get backgroundGradientColor => backgroundLightGradientColor;
+
+  @override
+  Gradient get borderGradientColor => borderLightGradientColor;
+
+  @override
+  MaterialColor get accentColorAsMaterialColor =>
+      accentLightColor.toMaterialColor();
+
+  @override
+  bool get isDark => false;
+
+  @override
+  Color get blueForGradientColor =>
+      const Color(0xFF00FEFF); // For specific uses
+
+  @override
+  Color get pinkForGradientColor =>
+      const Color(0xFFFE52BC); // For specific uses
+}
+
+// Dark Theme Colors
+const primaryDarkColor = Color(0xFF1C1C1E); // Background
+const secondaryDarkColor = Color(0xFF2C2C2E); // Card/Container background
+const accentDarkColor = Color(0xFFFFFFFF); // Active text and selected items
+
+class DarkWonderThemeData extends WonderThemeData {
+  @override
+  ThemeData get materialThemeData => ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: primaryDarkColor,
+        scaffoldBackgroundColor: primaryDarkColor,
+        cardColor: secondaryDarkColor,
+        useMaterial3: true,
+        textTheme: globalTextTheme, // Apply global text theme
+        tabBarTheme: const TabBarThemeData(
+          labelStyle: TextStyle(fontFamily: 'Cairo'),
+          unselectedLabelStyle: TextStyle(fontFamily: 'Cairo'),
+        ),
+      );
+
+  @override
+  Color get primaryColor => primaryDarkColor;
+
+  @override
+  Color get secondaryColor => secondaryDarkColor;
+
+  @override
+  Color get accentColor => accentDarkColor;
+
+  @override
+  Color get activeTextColor => primaryLightColor;
+
+  @override
+  Gradient get backgroundGradientColor => backgroundDarkGradientColor;
+
+  @override
+  Gradient get borderGradientColor => borderDarkGradientColor;
+
+  @override
+  Color get blueForGradientColor => const Color(0xFF00FEFF);
+
+  @override
+  Color get pinkForGradientColor => const Color(0xFFFE52BC);
+
+  @override
+  bool get isDark => true;
+
+  @override
+  MaterialColor get accentColorAsMaterialColor =>
+      accentDarkColor.toMaterialColor();
+}
+
+extension on Color {
+  Map<int, Color> _toSwatch() => {
+        50: withValues(alpha: 0.1),
+        100: withValues(alpha: 0.2),
+        200: withValues(alpha: 0.3),
+        300: withValues(alpha: 0.4),
+        400: withValues(alpha: 0.5),
+        500: withValues(alpha: 0.6),
+        600: withValues(alpha: 0.7),
+        700: withValues(alpha: 0.8),
+        800: withValues(alpha: 0.9),
+        900: this,
+      };
+
+  MaterialColor toMaterialColor() => MaterialColor(
+        toARGB32(),
+        _toSwatch(),
+      );
+}
