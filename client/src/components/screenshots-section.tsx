@@ -1,8 +1,7 @@
 import { useLanguage } from '@/hooks/use-language';
 
 // Import actual app screenshots
-import moviesScreenshot from '@/assets/movies-screenshot.png';
-import tvShowsScreenshot from '@/assets/tvshows-screenshot.png';
+import addActiveScreenshot from '@/assets/add-active-screenshot.png';
 import statsScreenshot from '@/assets/stats-screenshot.png';
 import profileScreenshot from '@/assets/profile-screenshot.png';
 
@@ -11,14 +10,9 @@ export function ScreenshotsSection() {
 
   const screenshots = [
     {
-      src: moviesScreenshot,
-      alt: 'Movies Library Screenshot',
-      testId: 'screenshot-movies'
-    },
-    {
-      src: tvShowsScreenshot,
-      alt: 'TV Shows Library Screenshot',
-      testId: 'screenshot-tvshows'
+      src: addActiveScreenshot,
+      alt: 'Add Content Screenshot with Active Button',
+      testId: 'screenshot-add-active'
     },
     {
       src: statsScreenshot,
