@@ -53,7 +53,6 @@ export function Footer() {
               <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-features">{t('features')}</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-privacy">{t('privacyPolicy')}</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-terms">{t('termsOfService')}</a></li>
-              <li><a href="/app-ads.txt" className="hover:text-foreground transition-colors" data-testid="link-app-ads">app-ads.txt</a></li>
             </ul>
           </div>
 
